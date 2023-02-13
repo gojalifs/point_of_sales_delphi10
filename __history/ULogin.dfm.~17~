@@ -1,0 +1,117 @@
+object FrmLogin: TFrmLogin
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Login'
+  ClientHeight = 233
+  ClientWidth = 363
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RzPanel1: TRzPanel
+    Left = 0
+    Top = 0
+    Width = 363
+    Height = 233
+    Align = alClient
+    TabOrder = 0
+    ExplicitWidth = 357
+    ExplicitHeight = 204
+    object RzLabel1: TRzLabel
+      Left = 80
+      Top = 76
+      Width = 56
+      Height = 19
+      Caption = 'Username'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Poppins'
+      Font.Style = []
+      ParentFont = False
+    end
+    object RzLabel2: TRzLabel
+      Left = 80
+      Top = 116
+      Width = 52
+      Height = 19
+      Caption = 'Password'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Poppins'
+      Font.Style = []
+      ParentFont = False
+    end
+    object RzPanel2: TRzPanel
+      Left = 2
+      Top = 2
+      Width = 359
+      Height = 41
+      Align = alTop
+      BorderOuter = fsBump
+      Caption = 'LOGIN POS (POINT OF SALES) PT MAJU BERKAH BERSAMA'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Gilroy Light'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      ExplicitWidth = 353
+    end
+    object RzEditUserName: TRzEdit
+      Left = 152
+      Top = 74
+      Width = 121
+      Height = 21
+      Text = ''
+      TabOrder = 1
+    end
+    object RzEditpassword: TRzMaskEdit
+      Left = 152
+      Top = 114
+      Width = 121
+      Height = 21
+      Hint = 'Password'
+      PasswordChar = '*'
+      TabOrder = 2
+      Text = ''
+    end
+    object RzBtnLogin: TRzButton
+      Left = 136
+      Top = 163
+      Caption = 'Login'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Poppins'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      OnClick = RzBtnLoginClick
+    end
+    object RzButton1: TRzButton
+      Left = 136
+      Top = 194
+      FrameColor = clMedGray
+      Caption = 'EXIT'
+      Color = clMaroon
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Poppins'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      OnClick = RzBtnLoginClick
+    end
+  end
+end

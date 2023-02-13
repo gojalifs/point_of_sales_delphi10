@@ -1,0 +1,54 @@
+inherited frmSupplier: TfrmSupplier
+  Caption = 'Master Supplier'
+  ClientHeight = 376
+  ClientWidth = 708
+  FormStyle = fsMDIChild
+  Position = poMainFormCenter
+  Visible = True
+  OnClose = FormClose
+  ExplicitWidth = 724
+  ExplicitHeight = 415
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel1: TPanel
+    Width = 708
+    ExplicitWidth = 708
+    inherited RzDBNavigator1: TRzDBNavigator
+      Hints.Strings = ()
+    end
+  end
+  inherited Panel2: TPanel
+    Left = 523
+    Height = 335
+    ExplicitLeft = 523
+    ExplicitHeight = 335
+  end
+  inherited Panel3: TPanel
+    Width = 523
+    Height = 335
+    ExplicitWidth = 523
+    ExplicitHeight = 335
+    inherited RzPanel1: TRzPanel
+      Width = 519
+      ExplicitWidth = 519
+    end
+    inherited RzPanel2: TRzPanel
+      Width = 519
+      Height = 204
+      ExplicitWidth = 519
+      ExplicitHeight = 204
+      inherited SMDBGrid1: TSMDBGrid
+        Width = 515
+        Height = 200
+        DataSource = DataSource1
+        GridStyle.Style = gsCustom
+        GridStyle.OddColor = clOlive
+        GridStyle.EvenColor = clGreen
+      end
+    end
+  end
+  inherited FDQuery1: TFDQuery
+    SQL.Strings = (
+      'select * from vendor')
+  end
+end

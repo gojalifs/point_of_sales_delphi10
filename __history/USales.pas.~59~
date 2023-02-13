@@ -1,0 +1,280 @@
+unit USales;
+
+interface
+
+uses
+    Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+    System.Classes, Vcl.Graphics,
+    Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UTransaksiData, Data.DB,
+    FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+    FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+    FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+    Vcl.Grids, Vcl.DBGrids, SMDBGrid, RzTabs, RzPanel, RzDBNav, Vcl.ExtCtrls,
+    RzButton, frxClass, frxDBSet;
+
+type
+    TfrmSales = class(TfrmTransaksiData)
+        FDQueryCustomer: TFDQuery;
+        DataSourceCustomer: TDataSource;
+        RzPanel1: TRzPanel;
+        RzBtnAddItem: TRzBitBtn;
+        FDQuItem: TFDQuery;
+        DsItem: TDataSource;
+        FDQuItemitemId: TWideStringField;
+        FDQuItemitemName: TWideStringField;
+        FDQuItemunit: TWideStringField;
+        FDQuItemminStock: TFMTBCDField;
+        FDQuItemmaxStock: TFMTBCDField;
+        FDQuItemhargaBeli: TFMTBCDField;
+        FDQuItemhargaJual: TFMTBCDField;
+        FDQuItemisActive: TBooleanField;
+        frxReport1: TfrxReport;
+        FDQuReport: TFDQuery;
+        DataSource1: TDataSource;
+        frxDBDataset1: TfrxDBDataset;
+        RzBitBtn1: TRzBitBtn;
+        FDQueryDetailsalesId: TWideStringField;
+        FDQueryDetailitemId: TWideStringField;
+        FDQueryDetailqty: TFMTBCDField;
+        FDQueryDetailunit: TWideStringField;
+        FDQueryDetailprice: TFMTBCDField;
+        FDQueryDetaillineAmount: TFMTBCDField;
+        FDQueryDetailrecordId: TLargeintField;
+        FDQueryDetailtransDate: TSQLTimeStampField;
+        FDQueryDetailUserId: TWideStringField;
+        FDQueryHeadersalesId: TWideStringField;
+        FDQueryHeadercustAccount: TWideStringField;
+        FDQueryHeadersalesDate: TDateField;
+        FDQueryHeaderisPpn: TBooleanField;
+        FDQueryHeaderTotalAmount: TFMTBCDField;
+        FDQueryHeadergrandTotal: TFMTBCDField;
+        FDQueryHeaderuserId: TWideStringField;
+        FDQueryHeadertransDate: TSQLTimeStampField;
+        FDQueryHeadertopCode: TWideStringField;
+        FDQueryCustomercustAccount: TWideStringField;
+        FDQueryCustomercustName: TWideStringField;
+        FDQueryCustomertelp: TWideStringField;
+        FDQueryCustomerfax: TWideStringField;
+        FDQueryCustomernpwp: TWideStringField;
+        FDQueryCustomercontactPerson: TWideStringField;
+        FDQueryCustomeremail: TWideStringField;
+        FDQueryCustomeraddress: TWideStringField;
+        procedure FormCreate(Sender: TObject);
+        procedure FormClose(Sender: TObject; var Action: TCloseAction);
+        procedure FDQueryHeaderAfterInsert(DataSet: TDataSet);
+        procedure FDQueryHeaderNewRecord(DataSet: TDataSet);
+        procedure RzBtnAddItemClick(Sender: TObject);
+        procedure FDQueryHeaderAfterScroll(DataSet: TDataSet);
+        procedure FDQueryDetailqtyChange(Sender: TField);
+        procedure FDQueryDetailpriceChange(Sender: TField);
+        procedure FDQueryDetailunitChange(Sender: TField);
+        procedure FDQueryDetailAfterPost(DataSet: TDataSet);
+        procedure RzBitBtn1Click(Sender: TObject);
+        procedure FormShow(Sender: TObject);
+
+
+    private
+        { Private declarations }
+    public
+        { Public declarations }
+    end;
+
+var
+    frmSales: TfrmSales;
+
+implementation
+
+{$R *.dfm}
+
+Uses UDM, UCreateSO, UAddItem, UMain;
+
+procedure TfrmSales.FDQueryDetailAfterPost(DataSet: TDataSet);
+begin
+
+    with DM.FDQuGlobal do
+    begin
+        sql.Clear;
+        sql.Add('SELECT SUM (lineAmount) as Total FROM salesDetail WHERE salesId =:A');
+        Params[0].AsString := FDQueryHeadersalesId.AsString;
+        open;
+    end;
+
+    with DM.FDQuGlobal2 do
+    begin
+        sql.Clear;
+        sql.Add('UPDATE SalesHeader SET totalAmount =:A , grandTotal =:B WHERE salesId =:C');
+
+        Params[0].AsFloat := DM.FDQuGlobal.FieldByName('total').AsFloat;
+        if FDQueryHeaderisPpn.AsBoolean = True then
+        begin
+            Params[1].AsFloat := (DM.FDQuGlobal.FieldByName('total').AsFloat *
+              0.11) + DM.FDQuGlobal.FieldByName('total').AsFloat;
+        end
+        else
+            Params[1].AsFloat := DM.FDQuGlobal.FieldByName('total').AsFloat;
+
+        Params[2].AsString := FDQueryHeadersalesId.AsString;
+        ExecSQL;
+    end;
+
+    FDQueryHeader.RefreshRecord();
+end;
+
+procedure TfrmSales.FDQueryDetailpriceChange(Sender: TField);
+begin
+
+    FDQueryDetaillineAmount.AsFloat := FDQueryDetailqty.AsFloat *
+      FDQueryDetailprice.AsFloat;
+end;
+
+procedure TfrmSales.FDQueryDetailqtyChange(Sender: TField);
+begin
+
+    FDQueryDetaillineAmount.AsFloat := FDQueryDetailqty.AsFloat *
+      FDQueryDetailprice.AsFloat;
+end;
+
+procedure TfrmSales.FDQueryDetailunitChange(Sender: TField);
+begin
+
+    FDQueryDetaillineAmount.AsFloat := FDQueryDetailqty.AsFloat *
+      FDQueryDetailprice.AsFloat;
+end;
+
+procedure TfrmSales.FDQueryHeaderAfterInsert(DataSet: TDataSet);
+begin
+
+    DM.FDQueryGetRecordId.Active := True;
+    FDQueryHeadersalesDate.AsDateTime := DM.FDQueryGetRecordId.FieldByName
+      ('transdate').AsDateTime;
+    FDQueryHeadertransDate.AsDateTime := DM.FDQueryGetRecordId.FieldByName
+      ('transdate').AsDateTime;
+    FDQueryHeaderTotalAmount.AsCurrency := 0;
+    FDQueryHeadergrandTotal.AsCurrency := 0;
+    FDQueryHeaderisPpn.AsBoolean := True;
+    FDQueryHeaderuserId.AsString := frmMain.vUser;
+end;
+
+procedure TfrmSales.FDQueryHeaderAfterScroll(DataSet: TDataSet);
+begin
+
+    with FDQueryDetail do
+    begin
+        sql.Clear;
+        sql.Add('SELECT * FROM salesdetail where salesid =:SALESID');
+        Params[0].AsString := FDQueryHeadersalesId.AsString;
+        Active := True;
+    end;
+    with DM.FDQuGlobal do
+    begin
+        sql.Clear;
+        sql.Add('SELECT SUM (lineAmount) as Total FROM salesDetail WHERE salesId =:A');
+        Params[0].AsString := FDQueryHeadersalesId.AsString;
+        open;
+    end;
+
+    with DM.FDQuGlobal2 do
+    begin
+        sql.Clear;
+        sql.Add('UPDATE SalesHeader SET totalAmount =:A , grandTotal =:B WHERE salesId =:C');
+
+        Params[0].AsFloat := DM.FDQuGlobal.FieldByName('total').AsFloat;
+        if FDQueryHeaderisPpn.AsBoolean = True then
+        begin
+            Params[1].AsFloat := (DM.FDQuGlobal.FieldByName('total').AsFloat *
+              0.11) + DM.FDQuGlobal.FieldByName('total').AsFloat;
+        end
+        else
+            Params[1].AsFloat := DM.FDQuGlobal.FieldByName('total').AsFloat;
+
+        Params[2].AsString := FDQueryHeadersalesId.AsString;
+        ExecSQL;
+    end;
+
+    FDQueryHeader.RefreshRecord();
+end;
+
+
+procedure TfrmSales.FDQueryHeaderNewRecord(DataSet: TDataSet);
+begin
+
+    if frmCreateSalesOrder = nil then
+    begin
+        Application.CreateForm(TfrmCreateSalesOrder, frmCreateSalesOrder);
+        frmCreateSalesOrder.Show;
+
+    end;
+end;
+
+procedure TfrmSales.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+
+    WindowState := wsMinimized;
+    frmSales := Nil;
+    Action := caFree;
+end;
+
+procedure TfrmSales.FormCreate(Sender: TObject);
+begin
+
+    with FDQueryHeader do
+    begin
+        sql.Clear;
+        sql.Add('SELECT * FROM salesheader');
+        Active := True;
+    end;
+
+    with FDQueryDetail do
+    begin
+        sql.Clear;
+        sql.Add('SELECT * FROM salesdetail');
+        Active := True;
+    end;
+
+    with FDQueryCustomer do
+    begin
+        sql.Clear;
+        sql.Add('SELECT * FROM customer');
+        Active := True;
+    end;
+end;
+
+procedure TfrmSales.FormShow(Sender: TObject);
+begin
+    inherited;
+    formName := frmMain.formShowed;
+end;
+
+procedure TfrmSales.RzBitBtn1Click(Sender: TObject);
+var
+    wPath: String;
+begin
+
+    wPath := ExtractFilePath(Application.ExeName);
+    with FDQuReport do
+    begin
+        sql.Clear;
+        sql.Add('select * from vsales where salesid =:A');
+        Params[0].AsString := FDQueryHeadersalesId.AsString;
+        open;
+    end;
+    with frxReport1 do
+    begin
+        LoadFromFile(wPath + 'rptSalesOrder.fr3');
+        ShowReport();
+    end;
+end;
+
+procedure TfrmSales.RzBtnAddItemClick(Sender: TObject);
+begin
+
+    if frmAddItem = nil then
+    begin
+        Application.CreateForm(TfrmAddItem, frmAddItem);
+        frmAddItem.vType := 'SO';
+        frmAddItem.vPurchaseid := FDQueryHeadersalesId.AsString;
+        frmAddItem.Show;
+    end;
+end;
+
+end.

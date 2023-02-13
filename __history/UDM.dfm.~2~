@@ -1,0 +1,20 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 302
+  Width = 640
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'DriverID=mssQL'
+      'SERVER=DESKTOP-PFO3J3K\SQLEXPRESS'
+      'User_Name=Fajar'
+      'Password=sokanegara'
+      'ApplicationName=Architect'
+      'Workstation=DESKTOP-PFO3J3K'
+      'MARS=yes'
+      'OSAuthent=No'
+      'DATABASE=POS')
+    LoginPrompt = False
+    Left = 96
+    Top = 80
+  end
+end

@@ -1,0 +1,118 @@
+inherited frmCustomer: TfrmCustomer
+  Caption = 'Master Customer'
+  FormStyle = fsMDIChild
+  Position = poMainFormCenter
+  Visible = True
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel1: TPanel
+    inherited RzDBNavigator1: TRzDBNavigator
+      Hints.Strings = ()
+    end
+  end
+  inherited Panel3: TPanel
+    inherited RzPanel1: TRzPanel
+      ExplicitLeft = 226
+      ExplicitTop = -4
+    end
+    inherited RzPanel2: TRzPanel
+      inherited SMDBGrid1: TSMDBGrid
+        DataSource = DataSource1
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'custAccount'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'custName'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'telp'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'fax'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'npwp'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'contactPerson'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'email'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'address'
+            Visible = True
+          end>
+      end
+    end
+  end
+  inherited FDQuery1: TFDQuery
+    SQL.Strings = (
+      'select * from customer')
+    Left = 616
+    Top = 65
+    object FDQuery1custAccount: TWideStringField
+      FieldName = 'custAccount'
+      Origin = 'custAccount'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+      Size = 10
+    end
+    object FDQuery1custName: TWideStringField
+      FieldName = 'custName'
+      Origin = 'custName'
+      Size = 80
+    end
+    object FDQuery1telp: TWideStringField
+      FieldName = 'telp'
+      Origin = 'telp'
+      Size = 80
+    end
+    object FDQuery1fax: TWideStringField
+      FieldName = 'fax'
+      Origin = 'fax'
+      Size = 50
+    end
+    object FDQuery1npwp: TWideStringField
+      FieldName = 'npwp'
+      Origin = 'npwp'
+      Size = 50
+    end
+    object FDQuery1contactPerson: TWideStringField
+      FieldName = 'contactPerson'
+      Origin = 'contactPerson'
+      Size = 80
+    end
+    object FDQuery1email: TWideStringField
+      FieldName = 'email'
+      Origin = 'email'
+      Size = 80
+    end
+    object FDQuery1address: TWideStringField
+      FieldName = 'address'
+      Origin = 'address'
+      Size = 250
+    end
+  end
+  inherited DataSource1: TDataSource
+    Left = 624
+    Top = 121
+  end
+end

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/11/05 20:06:08.000.213,=D:\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/05 20:07:10.000.850,D:\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UMain.dfm</Transaction>
+    <Transaction>2022/11/05 20:07:10.000.850,D:\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UMain.pas</Transaction>
+    <Transaction>2022/11/05 20:07:47.000.339,D:\Documents\Embarcadero\Studio\Projects\Project2.dproj=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\POS_FajarSidikPrasetio.dproj</Transaction>
+    <Transaction>2022/11/05 20:29:27.000.630,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas</Transaction>
+    <Transaction>2022/11/05 20:34:17.000.012,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UMasterData.dfm</Transaction>
+    <Transaction>2022/11/05 20:34:17.000.012,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UMasterData.pas</Transaction>
+    <Transaction>2022/11/05 20:36:45.000.681,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas</Transaction>
+    <Transaction>2022/11/05 20:42:07.000.558,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UDM.dfm</Transaction>
+    <Transaction>2022/11/05 20:42:07.000.558,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UDM.pas</Transaction>
+    <Transaction>2022/11/05 20:45:24.000.178,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas</Transaction>
+    <Transaction>2022/11/05 20:45:49.000.711,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UBarang.dfm</Transaction>
+    <Transaction>2022/11/05 20:45:49.000.711,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UBarang.pas</Transaction>
+    <Transaction>2022/11/05 20:47:28.000.752,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas</Transaction>
+    <Transaction>2022/11/05 20:48:12.000.710,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\USupplier.dfm</Transaction>
+    <Transaction>2022/11/05 20:48:12.000.710,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\USupplier.pas</Transaction>
+    <Transaction>2022/11/05 20:48:51.000.705,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas</Transaction>
+    <Transaction>2022/11/05 20:49:41.000.329,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UCustomer.pas</Transaction>
+    <Transaction>2022/11/05 20:49:41.000.329,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UCustomer.dfm</Transaction>
+    <Transaction>2022/11/05 20:49:54.000.573,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas</Transaction>
+    <Transaction>2022/11/05 20:50:32.000.501,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UUnit.dfm</Transaction>
+    <Transaction>2022/11/05 20:50:32.000.501,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\Unit1.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS\UUnit.pas</Transaction>
+    <Transaction>2022/12/17 13:10:56.000.324,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2022/12/17 13:13:46.000.509,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UTransaksiData.dfm</Transaction>
+    <Transaction>2022/12/17 13:13:46.000.509,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UTransaksiData.pas</Transaction>
+    <Transaction>2022/12/18 09:26:33.000.000,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2022/12/18 09:26:53.000.508,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2022/12/18 09:27:03.000.379,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPembelian.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2022/12/18 09:27:03.000.379,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPembelian.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.dfm</Transaction>
+    <Transaction>2022/12/18 09:50:55.000.424,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2022/12/18 09:51:11.000.150,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UCreatePO.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2022/12/18 09:51:11.000.150,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UCreatePO.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.dfm</Transaction>
+    <Transaction>2022/12/26 20:38:06.000.272,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2022/12/26 20:39:24.000.512,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UAddItem.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.dfm</Transaction>
+    <Transaction>2022/12/26 20:39:24.000.512,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UAddItem.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2023/01/10 20:25:06.000.429,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2023/01/10 20:26:25.000.332,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPurchaseReport.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.dfm</Transaction>
+    <Transaction>2023/01/10 20:26:25.000.332,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPurchaseReport.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2023/01/11 21:37:16.000.451,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2023/01/11 21:39:43.000.118,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2023/01/11 21:40:08.000.439,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UUsers.pas</Transaction>
+    <Transaction>2023/01/11 21:40:08.000.439,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UUsers.dfm</Transaction>
+    <Transaction>2023/01/12 18:44:28.000.696,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2023/01/12 18:44:40.000.287,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\ULogin.dfm</Transaction>
+    <Transaction>2023/01/12 18:44:40.000.287,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\ULogin.pas</Transaction>
+    <Transaction>2023/01/12 23:30:10.000.676,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2023/01/12 23:31:53.000.732,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPembelian.dfm=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPenjualan.dfm</Transaction>
+    <Transaction>2023/01/12 23:31:53.000.732,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPembelian.pas=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPenjualan.pas</Transaction>
+    <Transaction>2023/01/13 21:46:24.000.021,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPembelian.pas</Transaction>
+    <Transaction>2023/01/14 13:47:10.000.024,=D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\Unit1.pas</Transaction>
+    <Transaction>2023/01/14 14:03:47.000.241,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPenjualanNew.pas=</Transaction>
+    <Transaction>2023/01/15 12:01:05.400,D:\Documents\Kuliah\SMT7\Pemrograman Visual\POS - Fajar Sidik Prasetio - 311910118\UPenjualan.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

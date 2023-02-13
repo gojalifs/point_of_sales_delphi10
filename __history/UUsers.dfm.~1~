@@ -1,0 +1,10 @@
+inherited frmMasterData1: TfrmMasterData1
+  Caption = 'frmMasterData1'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel1: TPanel
+    inherited RzDBNavigator1: TRzDBNavigator
+      Hints.Strings = ()
+    end
+  end
+end

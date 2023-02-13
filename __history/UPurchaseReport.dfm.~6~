@@ -1,0 +1,113 @@
+object frmReportPurchase: TfrmReportPurchase
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'frmReportPurchase'
+  ClientHeight = 268
+  ClientWidth = 449
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RzPanel1: TRzPanel
+    Left = 0
+    Top = 0
+    Width = 449
+    Height = 268
+    Align = alClient
+    BorderOuter = fsBump
+    TabOrder = 0
+    ExplicitLeft = 96
+    ExplicitTop = 56
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object RzLabel1: TRzLabel
+      Left = 56
+      Top = 91
+      Width = 30
+      Height = 13
+      Caption = 'Period'
+    end
+    object RzLabel2: TRzLabel
+      Left = 265
+      Top = 91
+      Width = 12
+      Height = 13
+      Caption = 'To'
+    end
+    object RzPanel2: TRzPanel
+      Left = 2
+      Top = 2
+      Width = 445
+      Height = 47
+      Align = alTop
+      BorderOuter = fsBump
+      Caption = 'Purchase Report'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      ExplicitWidth = 466
+    end
+    object RzPanel3: TRzPanel
+      Left = 2
+      Top = 232
+      Width = 445
+      Height = 34
+      Align = alBottom
+      BorderOuter = fsBump
+      TabOrder = 1
+      ExplicitWidth = 466
+      object RzBtnPrint: TRzBitBtn
+        Left = 368
+        Top = 2
+        Height = 30
+        Align = alRight
+        Caption = 'Print'
+        TabOrder = 0
+        ExplicitLeft = 384
+        ExplicitTop = 8
+        ExplicitHeight = 25
+      end
+      object RzBtnClose: TRzBitBtn
+        Left = 293
+        Top = 2
+        Height = 30
+        Align = alRight
+        Caption = 'Close'
+        TabOrder = 1
+        OnClick = RzBtnCloseClick
+        ExplicitLeft = 303
+        ExplicitTop = 9
+        ExplicitHeight = 25
+      end
+    end
+    object RzDateTimeFrom: TRzDateTimeEdit
+      Left = 120
+      Top = 88
+      Width = 121
+      Height = 21
+      EditType = etDate
+      TabOrder = 2
+    end
+    object RzDateTimeTo: TRzDateTimeEdit
+      Left = 312
+      Top = 88
+      Width = 121
+      Height = 21
+      EditType = etDate
+      TabOrder = 3
+    end
+  end
+end

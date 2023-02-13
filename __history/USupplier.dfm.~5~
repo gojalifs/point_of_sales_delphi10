@@ -1,0 +1,37 @@
+inherited frmSupplier: TfrmSupplier
+  Caption = 'Master Supplier'
+  ClientHeight = 376
+  ClientWidth = 708
+  FormStyle = fsMDIChild
+  Position = poMainFormCenter
+  Visible = True
+  OnClose = FormClose
+  ExplicitWidth = 724
+  ExplicitHeight = 415
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel1: TPanel
+    Width = 708
+    ExplicitLeft = 0
+    ExplicitTop = 0
+    ExplicitWidth = 877
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+  inherited Panel2: TPanel
+    Left = 523
+    Height = 335
+    ExplicitLeft = 692
+    ExplicitTop = 41
+    ExplicitHeight = 430
+  end
+  inherited Panel3: TPanel
+    Width = 523
+    Height = 335
+    ExplicitLeft = 0
+    ExplicitTop = 41
+    ExplicitWidth = 692
+    ExplicitHeight = 430
+  end
+end

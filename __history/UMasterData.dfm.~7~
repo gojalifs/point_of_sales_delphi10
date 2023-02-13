@@ -1,0 +1,115 @@
+object frmMasterData: TfrmMasterData
+  Left = 0
+  Top = 0
+  Caption = 'frmMasterData'
+  ClientHeight = 471
+  ClientWidth = 877
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 877
+    Height = 41
+    Align = alTop
+    BevelInner = bvLowered
+    TabOrder = 0
+    object RzDBNavigator1: TRzDBNavigator
+      Left = 2
+      Top = 2
+      Width = 240
+      Height = 37
+      DataSource = DataSource1
+      Align = alLeft
+      BorderOuter = fsNone
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 692
+    Top = 41
+    Width = 185
+    Height = 430
+    Align = alRight
+    BevelInner = bvLowered
+    TabOrder = 1
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 41
+    Width = 692
+    Height = 430
+    Align = alClient
+    BevelInner = bvLowered
+    TabOrder = 2
+    object RzPanel1: TRzPanel
+      Left = 2
+      Top = 2
+      Width = 688
+      Height = 127
+      Align = alTop
+      BorderOuter = fsBump
+      TabOrder = 0
+    end
+    object RzPanel2: TRzPanel
+      Left = 2
+      Top = 129
+      Width = 688
+      Height = 299
+      Align = alClient
+      BorderOuter = fsBump
+      TabOrder = 1
+      object SMDBGrid1: TSMDBGrid
+        Left = 2
+        Top = 2
+        Width = 684
+        Height = 295
+        Align = alClient
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Flat = False
+        BandsFont.Charset = DEFAULT_CHARSET
+        BandsFont.Color = clWindowText
+        BandsFont.Height = -11
+        BandsFont.Name = 'Tahoma'
+        BandsFont.Style = []
+        Groupings = <>
+        GridStyle.Style = gsNormal
+        GridStyle.OddColor = clWindow
+        GridStyle.EvenColor = clWindow
+        TitleHeight.PixelCount = 24
+        FooterColor = clBtnFace
+        ExOptions = [eoENTERlikeTAB, eoKeepSelection, eoStandardPopup, eoBLOBEditor, eoTitleWordWrap, eoFilterAutoApply]
+        RegistryKey = 'Software\Scalabium'
+        RegistrySection = 'SMDBGrid'
+        WidthOfIndicator = 11
+        DefaultRowHeight = 17
+        ScrollBars = ssHorizontal
+      end
+    end
+  end
+  object FDQuery1: TFDQuery
+    Connection = DM.FDConnection1
+    SQL.Strings = (
+      'select * from barang')
+    Left = 304
+    Top = 73
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 408
+    Top = 105
+  end
+end

@@ -1,0 +1,272 @@
+inherited frmBarang: TfrmBarang
+  Caption = 'Master Data Barang'
+  FormStyle = fsMDIChild
+  Position = poMainFormCenter
+  Visible = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel1: TPanel
+    inherited RzDBNavigator1: TRzDBNavigator
+      Hints.Strings = ()
+    end
+  end
+  inherited Panel3: TPanel
+    inherited RzPanel1: TRzPanel
+      Height = 199
+      ExplicitHeight = 199
+      object RzLabel1: TRzLabel
+        Left = 24
+        Top = 29
+        Width = 35
+        Height = 13
+        Caption = 'Item Id'
+      end
+      object RzLabel2: TRzLabel
+        Left = 24
+        Top = 59
+        Width = 51
+        Height = 13
+        Caption = 'Item name'
+      end
+      object RzLabel3: TRzLabel
+        Left = 24
+        Top = 81
+        Width = 19
+        Height = 13
+        Caption = 'Unit'
+      end
+      object RzLabel4: TRzLabel
+        Left = 24
+        Top = 110
+        Width = 49
+        Height = 13
+        Caption = 'Min. Stock'
+      end
+      object RzLabel5: TRzLabel
+        Left = 24
+        Top = 137
+        Width = 53
+        Height = 13
+        Caption = 'Max. Stock'
+      end
+      object RzLabel6: TRzLabel
+        Left = 296
+        Top = 29
+        Width = 48
+        Height = 13
+        Caption = 'Harga Beli'
+      end
+      object RzLabel7: TRzLabel
+        Left = 296
+        Top = 56
+        Width = 51
+        Height = 13
+        Caption = 'Harga Jual'
+      end
+      object RzDBCheckBox1: TRzDBCheckBox
+        Left = 367
+        Top = 80
+        Width = 69
+        Height = 15
+        DataField = 'isActive'
+        DataSource = DataSource1
+        ValueChecked = 'True'
+        ValueUnchecked = 'False'
+        Caption = 'Is Active ?'
+        TabOrder = 0
+      end
+      object RzDBEdit1: TRzDBEdit
+        Left = 119
+        Top = 26
+        Width = 121
+        Height = 21
+        DataSource = DataSource1
+        DataField = 'itemId'
+        TabOrder = 1
+      end
+      object RzDBEdit2: TRzDBEdit
+        Left = 119
+        Top = 53
+        Width = 121
+        Height = 21
+        DataSource = DataSource1
+        DataField = 'itemName'
+        TabOrder = 2
+      end
+      object RzDBLookupComboBox1: TRzDBLookupComboBox
+        Left = 119
+        Top = 80
+        Width = 145
+        Height = 21
+        DataField = 'unit'
+        DataSource = DataSource1
+        TabOrder = 3
+      end
+      object RzDBNumericEdit1: TRzDBNumericEdit
+        Left = 119
+        Top = 107
+        Width = 65
+        Height = 21
+        DataSource = DataSource1
+        DataField = 'minStock'
+        Alignment = taLeftJustify
+        TabOrder = 4
+        DisplayFormat = ',0;(,0)'
+      end
+      object RzDBNumericEdit2: TRzDBNumericEdit
+        Left = 119
+        Top = 134
+        Width = 65
+        Height = 21
+        DataSource = DataSource1
+        DataField = 'maxStock'
+        Alignment = taLeftJustify
+        TabOrder = 5
+        DisplayFormat = ',0;(,0)'
+      end
+      object RzDBNumericEdit3: TRzDBNumericEdit
+        Left = 367
+        Top = 26
+        Width = 65
+        Height = 21
+        DataSource = DataSource1
+        DataField = 'hargaBeli'
+        Alignment = taLeftJustify
+        TabOrder = 6
+        DisplayFormat = ',0;(,0)'
+      end
+      object RzDBNumericEdit4: TRzDBNumericEdit
+        Left = 367
+        Top = 53
+        Width = 65
+        Height = 21
+        DataSource = DataSource1
+        DataField = 'hargaJual'
+        Alignment = taLeftJustify
+        TabOrder = 7
+        DisplayFormat = ',0;(,0)'
+      end
+    end
+    inherited RzPanel2: TRzPanel
+      Top = 201
+      Height = 227
+      ExplicitTop = 201
+      ExplicitHeight = 227
+      inherited SMDBGrid1: TSMDBGrid
+        Height = 223
+        DataSource = DataSource1
+        ReadOnly = True
+        GridStyle.Style = gsCustom
+        GridStyle.OddColor = clMoneyGreen
+        ExOptions = [eoENTERlikeTAB, eoKeepSelection, eoStandardPopup, eoBLOBEditor, eoTitleWordWrap, eoShowFilterBar, eoFilterAutoApply]
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'itemId'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'itemName'
+            Title.Caption = 'Item Name'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'unit'
+            Title.Caption = 'Unit'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'isActive'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'minStock'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'maxStock'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'hargaBeli'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'hargaJual'
+            Visible = True
+          end>
+      end
+    end
+  end
+  inherited FDQuery1: TFDQuery
+    Left = 600
+    Top = 49
+    object FDQuery1itemId: TWideStringField
+      FieldName = 'itemId'
+      Origin = 'itemId'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object FDQuery1itemName: TWideStringField
+      FieldName = 'itemName'
+      Origin = 'itemName'
+      Size = 30
+    end
+    object FDQuery1unit: TWideStringField
+      FieldName = 'unit'
+      Origin = 'unit'
+      Size = 10
+    end
+    object FDQuery1minStock: TFMTBCDField
+      FieldName = 'minStock'
+      Origin = 'minStock'
+      Precision = 18
+      Size = 2
+    end
+    object FDQuery1maxStock: TFMTBCDField
+      FieldName = 'maxStock'
+      Origin = 'maxStock'
+      Precision = 18
+      Size = 2
+    end
+    object FDQuery1hargaBeli: TFMTBCDField
+      FieldName = 'hargaBeli'
+      Origin = 'hargaBeli'
+      Precision = 18
+      Size = 2
+    end
+    object FDQuery1hargaJual: TFMTBCDField
+      FieldName = 'hargaJual'
+      Origin = 'hargaJual'
+      Precision = 18
+      Size = 2
+    end
+    object FDQuery1isActive: TBooleanField
+      FieldName = 'isActive'
+      Origin = 'isActive'
+    end
+  end
+  inherited DataSource1: TDataSource
+    Left = 600
+  end
+  object FDQuUnit: TFDQuery
+    SQL.Strings = (
+      'select * from unit')
+    Left = 656
+    Top = 48
+  end
+  object DsUnit: TDataSource
+    DataSet = FDQuUnit
+    Left = 656
+    Top = 104
+  end
+end

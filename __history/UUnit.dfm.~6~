@@ -1,0 +1,84 @@
+inherited frmUnit: TfrmUnit
+  Caption = 'Master Unit'
+  FormStyle = fsMDIChild
+  Position = poMainFormCenter
+  Visible = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel1: TPanel
+    inherited RzDBNavigator1: TRzDBNavigator
+      Hints.Strings = ()
+    end
+  end
+  inherited Panel3: TPanel
+    inherited RzPanel1: TRzPanel
+      Height = 183
+      ExplicitHeight = 183
+      object RzLabel1: TRzLabel
+        Left = 48
+        Top = 24
+        Width = 19
+        Height = 13
+        Caption = 'Unit'
+      end
+      object RzLabel2: TRzLabel
+        Left = 48
+        Top = 48
+        Width = 49
+        Height = 13
+        Caption = 'Unit Name'
+      end
+    end
+    inherited RzPanel2: TRzPanel
+      Top = 185
+      Height = 243
+      inherited SMDBGrid1: TSMDBGrid
+        Height = 239
+        DataSource = DataSource1
+        GridStyle.Style = gsCustom
+        GridStyle.OddColor = clMoneyGreen
+      end
+    end
+  end
+  object RzDBEdit1: TRzDBEdit [3]
+    Left = 112
+    Top = 64
+    Width = 121
+    Height = 21
+    DataSource = DataSource1
+    DataField = 'unit'
+    TabOrder = 3
+  end
+  object RzDBEdit2: TRzDBEdit [4]
+    Left = 112
+    Top = 88
+    Width = 121
+    Height = 21
+    DataSource = DataSource1
+    DataField = 'unitName'
+    TabOrder = 4
+  end
+  inherited FDQuery1: TFDQuery
+    Active = True
+    SQL.Strings = (
+      'select * from unit')
+    Left = 608
+    Top = 57
+    object FDQuery1unit: TWideStringField
+      FieldName = 'unit'
+      Origin = 'unit'
+      Required = True
+      Size = 10
+    end
+    object FDQuery1unitName: TWideStringField
+      FieldName = 'unitName'
+      Origin = 'unitName'
+    end
+  end
+  inherited DataSource1: TDataSource
+    Left = 616
+    Top = 113
+  end
+end
